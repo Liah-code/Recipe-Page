@@ -77,8 +77,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
   z-index: 10;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
 
 #theme-toggle-light:hover,
@@ -86,12 +89,24 @@ body {
   transform: scale(1.1);
 }
 
+#theme-toggle-light.active,
+#theme-toggle-dark.active {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.6);
+  border: 2px solid rgba(249, 115, 22, 0.5);
+}
+
+#theme-toggle-light.hidden,
+#theme-toggle-dark.hidden {
+  display: none !important;
+}
+
 #theme-toggle-light img,
 #theme-toggle-dark img {
   pointer-events: none;
 }
 
-/* Responsive utilities */
+/* Responsiveness */
 @media (max-width: 640px) {
   html {
     font-size: 14px;

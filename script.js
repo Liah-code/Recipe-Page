@@ -1,13 +1,12 @@
 //THEME MODE
 
-// Wait for DOM to be ready
 const initThemeToggle = () => {
   const lightBtn = document.getElementById("theme-toggle-light");
   const darkBtn = document.getElementById("theme-toggle-dark");
   const userTheme = localStorage.getItem("theme");
   const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  // Restore saved theme on page load
+
   if (userTheme === "dark") {
     document.documentElement.classList.add("dark-theme");
   } else if (userTheme === "light") {
@@ -15,53 +14,54 @@ const initThemeToggle = () => {
   } else if (systemTheme) {
     document.documentElement.classList.add("dark-theme");
   }
-
-  // Update button visibility based on current theme
   const updateThemeButtons = () => {
     const isDark = document.documentElement.classList.contains("dark-theme");
     if (lightBtn && darkBtn) {
       if (isDark) {
         lightBtn.classList.remove("hidden");
+        lightBtn.classList.add("active");
         darkBtn.classList.add("hidden");
+        darkBtn.classList.remove("active");
       } else {
-        lightBtn.classList.add("hidden");
+
         darkBtn.classList.remove("hidden");
+        darkBtn.classList.add("active");
+        lightBtn.classList.add("hidden");
+        lightBtn.classList.remove("active");
       }
     }
   };
 
-  // Set initial button visibility
   updateThemeButtons();
 
-  // Light button - switch to dark theme
+
   if (lightBtn) {
     lightBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      document.documentElement.classList.add("dark-theme");
-      localStorage.setItem("theme", "dark");
-      updateThemeButtons();
-    });
-  }
-
-  // Dark button - switch to light theme
-  if (darkBtn) {
-    darkBtn.addEventListener("click", (e) => {
       e.preventDefault();
       document.documentElement.classList.remove("dark-theme");
       localStorage.setItem("theme", "light");
       updateThemeButtons();
     });
   }
+
+
+  if (darkBtn) {
+    darkBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.documentElement.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark");
+      updateThemeButtons();
+    });
+  }
 };
 
-// Initialize when DOM is ready
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initThemeToggle);
 } else {
   initThemeToggle();
 }
 
-//input field
 const subscribeBox = document.getElementById("form");
 const inputName = document.getElementById("fullname-input");
 const inputEmail = document.getElementById("email-input");
