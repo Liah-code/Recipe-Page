@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/img/chefhat.webp" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>TasteNaija</title>
+  </head>
+  <body
+    class="min-h-screen flex flex-col pt-16 sm:pt-20 md:pt-24 bg-[var(--background)] text-[var(--text-color-white)]"
+  >
+    <header>
+      <div
+        class="flex flex-wrap justify-between items-center gap-2 sm:gap-3 md:gap-4 h-auto py-4 sm:py-5 md:py-6 px-3 sm:px-4 md:px-6 shadow-xl fixed w-full top-0 left-0 z-50"
+        style="background: var(--background); color: var(--text-color)"
+      >
+        <a href="index.html">
+          <h1
+            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent"
+          >
+            TasteNaija <i class="fa-solid fa-utensils"></i>
+          </h1>
+        </a>
+        <!------------------input----------------------->
+        <div
+          class="flex items-center justify-center h-10 sm:h-12 md:h-14 gap-2 sm:gap-3 w-full hidden"
+        >
+          <div class="background rounded-full p-[2px] w-full">
+            <form
+              id="search-form"
+              class="flex w-full border-0 rounded-full h-10 sm:h-12 md:h-14 px-2 sm:px-3 md:px-4 bg-white items-center"
+            >
+              <input
+                class="outline-none text-sm sm:text-base md:text-lg w-full bg-transparent h-full flex-1 placeholder:text-gray-500"
+                type="text"
+                placeholder="Search "
+                id="search-input"
+              />
+              <button class="" id="search-btn">
+                <i
+                  class="fa-solid fa-magnifying-glass text-base sm:text-lg md:text-xl background bg-clip-text text-transparent cursor-pointer"
+                ></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <!------search btn-->
+        <button id="search-btn" class="flex-shrink-0">
+          <i
+            class="fa-solid fa-magnifying-glass text-xl sm:text-2xl md:text-3xl background bg-clip-text text-transparent cursor-pointer"
+          ></i>
+        </button>
+      </div>
+    </header>
+    <!-------------------Main Content-------------------------->
+    <main
+      class="flex-grow flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10"
+      id="recipes-container"
+    >
+      <div class="w-full max-w-4xl">
+        <p class="text-center text-base sm:text-lg md:text-xl">
+          Recipe will show here....
+        </p>
+      </div>
+      <div class="hidden w-full max-w-4xl">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
+          Recipe Name:
+        </h1>
+
+        <h2
+          class="text-xl sm:text-2xl md:text-3xl font-semibold mt-4 sm:mt-6 md:mt-8"
+        >
+          Intro:
+        </h2>
+        <p class="text-base sm:text-lg md:text-xl mt-2 sm:mt-3 md:mt-4"></p>
+
+        <div class="ingredients-section mt-4 sm:mt-6 md:mt-8">
+          <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold">
+            Ingredients:
+          </h3>
+          <ul class="px-3 sm:px-4 md:px-5 mt-2 sm:mt-3 md:mt-4">
+            <li class="list-disc text-base sm:text-lg md:text-xl"></li>
+          </ul>
+        </div>
+        <div class="instructions mt-4 sm:mt-6 md:mt-8">
+          <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold">
+            Instructions:
+          </h3>
+          <ol class="px-3 sm:px-4 md:px-5 mt-2 sm:mt-3 md:mt-4">
+            <li class="list-decimal text-base sm:text-lg md:text-xl"></li>
+          </ol>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="py-6 sm:py-8 md:py-10 lg:py-12 mt-10 sm:mt-12 md:mt-16 w-full flex flex-col justify-center items-center gap-4 sm:gap-6 px-4"
+    >
+      <p class="text-xs sm:text-sm md:text-base lg:text-lg text-center">
+        Made with ❤️ in Nigeria | © 2025 Naija Recipes
+      </p>
+      <div
+        class="flex items-center gap-7 h-auto w-auto py-3 px-4 rounded-full bg-gray-200"
+      >
+        <button id="theme-toggle-light">
+          <img id="sun" class="w-5" src="/img/sun-svgrepo-com (1).svg" alt="" />
+        </button>
+        <button id="theme-toggle-dark">
+          <img
+            id="moon"
+            class="w-5"
+            src="/img/basic-moon-svgrepo-com.svg"
+            alt=""
+          />
+        </button>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

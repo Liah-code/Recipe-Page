@@ -1,0 +1,89 @@
+:root {
+  --gradient: linear-gradient(to right, #f97316, #dc2626); 
+  --text-color: linear-gradient(to right, #d86717, #f87171);
+  --background: #fff;
+  --theme-toggle: transparent;
+  --md: 5rem; 
+  --large: 5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.background {
+  background: var(--gradient);
+}
+
+.color {
+  background: var(--text-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;             
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-theme {
+  --background: #1a1a1a;
+  --text-color-white: #f0f0f0;
+  --theme-toggle: grey; 
+}
+
+.background-dark {
+  background: var(--gradient);
+}
+
+#white-text {
+  background: var(--text-color-white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;             
+  -webkit-text-fill-color: transparent;
+}
+
+.theme-toggle-light {
+  background: var(--theme-toggle);
+}
+
+.theme-toggle-dark {
+  background: var(--theme-toggle);
+}
+
+.medium-text {
+  font-size: var(--md);
+}
+
+.large-text {
+  font-size: var(--large);
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 16px;
+  }
+}
+

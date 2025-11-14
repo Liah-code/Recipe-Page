@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="/img/chefhat.webp
+    "
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>TasteNaija</title>
+  </head>
+  <body
+    class="pt-[4.5rem] bg-[var(--background)] text-[var(--text-color-white)]"
+  >
+    <header>
+      <div
+        class="flex flex-wrap justify-between items-center gap-2 h-auto py-5 px-2 shadow-xl fixed w-full top-0 left-0 z-50 md:h-[200px] lg:h-auto"
+        style="background: var(--background); color: var(--text-color)"
+      >
+        <h1
+          class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent md:text-4xl"
+        >
+          TasteNaija <i class="fa-solid fa-utensils"></i>
+        </h1>
+        <a href="recipepage.html">
+          <button
+            style="background: var(--gradient)"
+            class="rounded-full bg-[var(--gradient)] h-9 px-2 md:h-10 md:py-1 lg:h-11 lg:py-1.5 md:px-3 lg:px-4"
+          >
+            <p
+              class="md:text-base lg:text-lg md:max-w-full md:mb-0 text-white text-sm"
+            >
+              Browse Recipes
+            </p>
+          </button></a
+        >
+      </div>
+      <div
+        class="bg-gradient-to-r from-orange-500 to-red-600 m-auto w-full px-4 sm:px-5 md:px-6 lg:px-8 flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 lg:py-24 min-h-screen"
+      >
+        <!-- <div class="images flex-1 z-0">
+          <img
+            src="/img/egusi-soup.jpg"
+            class="w-[250px] h-[250px] rounded-full absolute left-0 top-1 z-30"
+            alt=""
+          />
+          <img
+            src="/img/jollof-rice.jpeg"
+            class="w-[250px] h-[250px] rounded-full absolute left-24 top-4"
+            alt=""
+          />
+          <img
+            src="/img/stew.jpeg"
+            class="w-[250px] h-[240px] rounded-full absolute left-44 top-30 z-50"
+            alt=""
+          />
+        </div> -->
+
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center font-semibold text-white/80 mb-4 sm:mb-6 md:mb-8 lg:mb-10 leading-tight md:leading-[1.3]"
+        >
+          Discover the Taste of Nigeria
+        </h2>
+        <p
+          class="text-white text-sm sm:text-base md:text-lg lg:text-xl text-center max-w-2xl md:max-w-3xl lg:max-w-4xl leading-relaxed md:leading-loose"
+        >
+          Nigerian food is bold, colorful, and full of life. Every recipe tells
+          a story of culture, family, and celebration.
+        </p>
+      </div>
+    </header>
+    <!------------------About Us-------------->
+    <section
+      class="px-4 sm:px-6 md:px-8 lg:px-10 md:flex md:items-center md:flex-col"
+    >
+      <h3
+        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mt-6 sm:mt-8 md:mt-10 md:my-6 lg:my-8"
+      >
+        Cooking, the Nigerian Way
+      </h3>
+      <p
+        class="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose mt-3 sm:mt-4 max-w-3xl md:max-w-4xl md:mb-6 lg:mb-8"
+      >
+        Whether you're craving the warmth of Egusi soup, the crunch of
+        Puff-Puff, or the richness of Ofada stew, we bring recipes that are easy
+        to follow, using ingredients you can find locally or abroad. From smoky
+        Jollof rice to spicy pepper soup, explore authentic Nigerian recipes
+        made simple, step-by-step.
+      </p>
+    </section>
+    <!--------------------Featured recipes-------------------->
+    <section class="mt-8 sm:mt-10 md:mt-12 px-4 sm:px-6 md:px-8 lg:px-10">
+      <h3
+        class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 md:mb-8"
+      >
+        Popular Recipes
+      </h3>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6"
+      ></div>
+      <button
+        style="background: var(--gradient)"
+        class="bg-[var(--gradient)] text-sm sm:text-base md:text-lg lg:text-xl outline-none cursor-pointer px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-white mt-6 sm:mt-8 md:mt-10 mx-auto rounded-full hover:shadow-lg transition-shadow"
+        id="show-more-btn"
+      >
+        Show More
+      </button>
+    </section>
+    <!-----------------------Subscribe-------------------->
+    <section
+      class="px-4 sm:px-6 md:px-8 lg:px-10 mt-10 sm:mt-12 md:mt-16 py-8 sm:py-10 md:py-12 flex flex-col justify-center items-center"
+      style="background: var(--background); color: var(--text-color)"
+    >
+      <h4
+        class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 text-center"
+      >
+        Subscribe to our Newsletter
+      </h4>
+      <p
+        class="text-sm sm:text-base md:text-lg lg:text-xl my-2 sm:my-3 md:my-4 max-w-xl md:max-w-2xl text-center leading-relaxed"
+      >
+        Get weekly Nigerian recipes straight to your inbox - no spam, just
+        delicious food ideas.
+      </p>
+      <div id="form" class="flex flex-col gap-3 w-full max-w-md sm:max-w-lg">
+        <div
+          class="bg-gradient-to-r from-orange-500 to-red-600 rounded-full p-[2px]"
+        >
+          <div class="flex gap-2 rounded-full px-3 py-2 bg-white items-center">
+            <input
+              class="outline-none w-full bg-transparent"
+              type="text"
+              placeholder="Enter your full name"
+              id="fullname-input"
+            />
+          </div>
+        </div>
+        <div class="error text-red-500 hidden">Please enter your Full Name</div>
+        <div
+          class="bg-gradient-to-r from-orange-500 to-red-600 rounded-full p-[2px]"
+        >
+          <div class="flex gap-2 rounded-full px-3 py-2 bg-white items-center">
+            <input
+              class="outline-none w-full bg-transparent"
+              type="email"
+              placeholder="Enter email"
+              id="email-input"
+            />
+          </div>
+        </div>
+        <div class="error text-red-500 hidden"></div>
+        <button
+          style="background: var(--gradient)"
+          class="rounded-full bg-gradient-to-r from-orange-500 to-red-600 font-bold px-4 sm:px-5 h-10 sm:h-11 md:h-12 text-white text-sm sm:text-base md:text-lg hover:shadow-lg transition-shadow"
+          type="submit"
+          id="subscribe-btn"
+        >
+          Subscribe
+        </button>
+        <div class="text-green-500 hidden"></div>
+      </div>
+    </section>
+    <!---------------Footer---------------------------->
+    <footer
+      class="py-8 sm:py-10 md:py-12 mt-10 sm:mt-12 md:mt-16 w-full flex flex-col justify-center items-center gap-4 sm:gap-6 px-4"
+    >
+      <p class="text-xs sm:text-sm md:text-base lg:text-lg text-center">
+        Made with ❤️ in Nigeria | © 2025 Naija Recipes
+      </p>
+      <div
+        class="flex items-center gap-7 h-auto w-auto py-3 px-4 rounded-full bg-gray-200"
+      >
+        <button id="theme-toggle-light">
+          <img id="sun" class="w-5" src="/img/sun-svgrepo-com (1).svg" alt="" />
+        </button>
+        <button id="theme-toggle-dark">
+          <img
+            id="moon"
+            class="w-5"
+            src="/img/basic-moon-svgrepo-com.svg"
+            alt=""
+          />
+        </button>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
