@@ -7,6 +7,11 @@
   --large: 5rem;
 }
 
+html.dark-theme {
+  --background: #1a1a1a;
+  --text-color-white: #f0f0f0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,12 +37,6 @@ body {
   -webkit-background-clip: text;
   color: transparent;             
   -webkit-text-fill-color: transparent;
-}
-
-.dark-theme {
-  --background: #1a1a1a;
-  --text-color-white: #f0f0f0;
-  --theme-toggle: grey; 
 }
 
 .background-dark {
@@ -66,6 +65,30 @@ body {
 
 .large-text {
   font-size: var(--large);
+}
+
+/* Theme toggle buttons */
+#theme-toggle-light,
+#theme-toggle-dark {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+#theme-toggle-light:hover,
+#theme-toggle-dark:hover {
+  transform: scale(1.1);
+}
+
+#theme-toggle-light img,
+#theme-toggle-dark img {
+  pointer-events: none;
 }
 
 /* Responsive utilities */

@@ -1,43 +1,65 @@
 //THEME MODE
 
-const lightBtn = document.getElementById("theme-toggle-light");
-const darkBtn = document.getElementById("theme-toggle-dark");
-const sun = document.getElementById("sun");
-const moon = document.getElementById("moon");
-const userTheme = localStorage.getItem("theme");
-const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+// Wait for DOM to be ready
+const initThemeToggle = () => {
+  const lightBtn = document.getElementById("theme-toggle-light");
+  const darkBtn = document.getElementById("theme-toggle-dark");
+  const userTheme = localStorage.getItem("theme");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-// Initialize theme on page load
-const initTheme = () => {
-  const isDark = document.documentElement.classList.contains("dark-theme");
-  if (isDark) {
-    if (darkBtn) darkBtn.classList.add("hidden");
-    if (lightBtn) lightBtn.classList.remove("hidden");
-  } else {
-    if (lightBtn) lightBtn.classList.add("hidden");
-    if (darkBtn) darkBtn.classList.remove("hidden");
+  // Restore saved theme on page load
+  if (userTheme === "dark") {
+    document.documentElement.classList.add("dark-theme");
+  } else if (userTheme === "light") {
+    document.documentElement.classList.remove("dark-theme");
+  } else if (systemTheme) {
+    document.documentElement.classList.add("dark-theme");
+  }
+
+  // Update button visibility based on current theme
+  const updateThemeButtons = () => {
+    const isDark = document.documentElement.classList.contains("dark-theme");
+    if (lightBtn && darkBtn) {
+      if (isDark) {
+        lightBtn.classList.remove("hidden");
+        darkBtn.classList.add("hidden");
+      } else {
+        lightBtn.classList.add("hidden");
+        darkBtn.classList.remove("hidden");
+      }
+    }
+  };
+
+  // Set initial button visibility
+  updateThemeButtons();
+
+  // Light button - switch to dark theme
+  if (lightBtn) {
+    lightBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.documentElement.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark");
+      updateThemeButtons();
+    });
+  }
+
+  // Dark button - switch to light theme
+  if (darkBtn) {
+    darkBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.documentElement.classList.remove("dark-theme");
+      localStorage.setItem("theme", "light");
+      updateThemeButtons();
+    });
   }
 };
 
-if (lightBtn) {
-  lightBtn.addEventListener("click", () => {
-    document.documentElement.classList.add("dark-theme");
-    lightBtn.classList.add("hidden");
-    if (darkBtn) darkBtn.classList.remove("hidden");
-    localStorage.setItem("theme", "dark");
-  });
+// Initialize when DOM is ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initThemeToggle);
+} else {
+  initThemeToggle();
 }
-
-if (darkBtn) {
-  darkBtn.addEventListener("click", () => {
-    document.documentElement.classList.remove("dark-theme");
-    darkBtn.classList.add("hidden");
-    if (lightBtn) lightBtn.classList.remove("hidden");
-    localStorage.setItem("theme", "light");
-  });
-}
-
-window.addEventListener("DOMContentLoaded", initTheme);
 
 //input field
 const subscribeBox = document.getElementById("form");
