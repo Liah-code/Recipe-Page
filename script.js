@@ -49,6 +49,8 @@ const initThemeToggle = () => {
     darkBtn.addEventListener("click", (e) => {
       e.preventDefault();
       document.documentElement.classList.add("dark-theme");
+      inputEmail.value.stlye= "color: var(--text-dark)";
+      inputName.value.className = "text-[var(--text-dark)]";
       localStorage.setItem("theme", "dark");
       updateThemeButtons();
     });

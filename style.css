@@ -5,11 +5,27 @@
   --theme-toggle: transparent;
   --md: 5rem; 
   --large: 5rem;
+  --text-dark: #1a1a1a;
+    --text-light: #000;
+  --input-bg-light: #fff;
+  --border-light: #ccc;
+  --text-dark: #ffffff;
+  --input-bg-dark: #1a1a1a;
+  --border-dark: #444;
 }
-
 html.dark-theme {
   --background: #1a1a1a;
   --text-color-white: #f0f0f0;
+}
+input, button {
+  color: var(--text-light);
+  background: var(--input-bg-light);
+  border-color: var(--border-light);
+}
+.dark-theme input,
+.dark-theme button {
+  color: var(--input-bg-dark);
+  border-color: var(--border-dark);
 }
 
 * {
